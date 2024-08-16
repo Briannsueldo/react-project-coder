@@ -1,0 +1,16 @@
+@import '../../../styles/base/vars';
+
+
+svg {
+    background-color: transparent;
+    color: $mainWhite;
+    height: 1.2rem;
+    width: 1.2rem;
+}
+
+
+.cartCount {
+    background-color: transparent;
+    color: $mainWhite;
+    font-size: 1.2rem;
+}

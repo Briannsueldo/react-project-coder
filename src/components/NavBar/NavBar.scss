@@ -1,0 +1,35 @@
+
+@import '../../styles/style.scss';
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 2.5rem;
+    height: 5rem;
+    background-color: $mainDark;
+
+    .storeLogo-container {
+        display: flex;
+        background-color: transparent;
+    }
+
+    .storeName-container {
+        background-color: transparent;
+
+        h3 {
+            background-color: transparent;
+            color: $mainWhite;
+            font-size: 1.4rem;
+        }
+    }
+
+    .cartNav-container {
+        display: flex;
+        background-color: transparent;
+        gap: 1rem;
+        border: 1px solid $mainWhite;
+        padding: .2rem .5rem;
+    }
+}

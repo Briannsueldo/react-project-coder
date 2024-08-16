@@ -1,0 +1,17 @@
+@import '../../styles/base/vars';
+
+.mainSection {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 90%;
+    left: 5%;
+    gap: 1rem;
+
+    .separator {
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: $mainGray;
+    }
+}

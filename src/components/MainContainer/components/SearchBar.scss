@@ -1,0 +1,22 @@
+@import '../../../styles/base/vars';
+
+.searchBar-container {
+    display: flex;
+    gap: 1rem;
+
+    .searchInput {
+        padding: .2rem .5rem;
+        outline: none;
+        border: 1px solid $mainGray;
+        border-radius: 0.1rem;
+        width: 12rem;
+    }
+
+    .searchButton {
+        padding: .2rem .8rem;
+        outline: none;
+        border: 1px solid $mainBlue;
+        background-color: $mainBlue;
+        border-radius: 0.1rem;
+    }
+}
