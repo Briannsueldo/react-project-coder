@@ -1,0 +1,17 @@
+@import '../../../styles/base/vars';
+
+.sections-container {
+    display: flex;
+    gap: 2rem;
+    background-color: transparent;
+
+    .section-item {
+        text-decoration: none;
+        list-style: none;
+        background-color: transparent;
+        color: $mainWhite;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+    }
+}

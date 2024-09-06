@@ -1,8 +1,21 @@
 @import '../../../styles/base/vars';
 
-.logo-svg {
+.storeLogo-container {
+    display: flex;
     background-color: transparent;
-    color: $mainWhite;
-    height: 2.5rem;
-    width: 2.5rem;
+    align-items: center;
+    gap: 0.5rem;
+
+    .logo-svg {
+        background-color: transparent;
+        color: $mainWhite;
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+
+    .titleName {
+        background-color: transparent;
+        color: $mainWhite;
+        font-size: 1.5rem;
+    }
 }

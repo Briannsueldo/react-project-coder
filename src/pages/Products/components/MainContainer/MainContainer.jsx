@@ -1,5 +1,5 @@
 
-import { SearchBar } from "./components/SearchBar";
+import { SearchBar } from "./components/SearchBar"; 
 import { CatDisplay } from "./components/CatDisplay";
 
 import './MainContainer.scss';

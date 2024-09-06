@@ -1,5 +1,8 @@
 import { Logo } from "./components/Logo"
 import { Cart } from "./components/Cartwidget";
+import { PageSections } from "./components/PageSections";
+
+
 import './NavBar.scss';
 
 export const NavBar = () => {
@@ -8,8 +11,8 @@ export const NavBar = () => {
             <div className="storeLogo-container">
                 <Logo/>
             </div>
-            <div className="storeName-container">
-                <h3>Foxytech</h3>
+            <div className="storeSections-container">
+                <PageSections/>
             </div>
             <button className="cartNav-container">
                 <Cart/>

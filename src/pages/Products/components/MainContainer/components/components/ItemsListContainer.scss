@@ -1,0 +1,23 @@
+@import '../../../../../../styles/base/vars';
+
+.itemContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 25rem;
+
+    .itemPictureContainer {
+        display: flex;
+        width: 400px;
+        height: 300px;
+        overflow: hidden;
+        border: 2px solid black;
+        justify-content: center;
+
+        img {
+            object-fit: contain;
+            display: flex;
+        }
+    }
+    
+}
