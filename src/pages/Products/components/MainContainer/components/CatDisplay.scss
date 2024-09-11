@@ -3,6 +3,7 @@
 
 .mainContainer {
     display: flex;
+    width: 100%;
 
     .categories-container {
         display: flex;
@@ -10,7 +11,7 @@
         width: 12rem;
         gap: .5rem;
     
-        .category-container {
+        .category-btn-container {
             display: flex;
             width: 100%;
             height: 2rem;
@@ -18,30 +19,38 @@
             border-radius: .2rem;
             align-items: center;
             overflow: hidden;
-    
-            .catImage {
+
+            &:hover {
+                background-color: $mainBlue;
+                border: 1px solid $mainBlue;
+            }
+
+            .catImg-container {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 40%;
                 height: 100%;
-    
+                width: 40%;
+                background-color: transparent;
+
                 img {
-                    width: 1.5rem;
+                    background-color: transparent;
                 }
             }
     
             .catName {
-                width: 60%;
+                width: fit-content;
                 display: flex;
                 justify-content: start;
+                background-color: transparent;
+                font-weight: 500;
             }
         }
     }
 
     .display-container {
-        width: 100%;
         display: flex;
+        width: calc(100% - 12rem);
         flex-wrap: wrap;
         gap: 1rem;
         padding-inline: 1rem;

@@ -126,7 +126,7 @@ const products = [
             active: false,
             amount: 0,
         },
-        picture: "/DataImages/i714700k",
+        picture: "/DataImages/i714700k.jpg",
         pictures: "",
         votes: 75, 
     },
@@ -186,7 +186,7 @@ const products = [
         id: 15,
         name: "Asus ROG Z790-H",
         price: 300,
-        category: "mother",
+        category: "motherboard",
         discountStatus: {
             active: false,
             amount: 0,
@@ -199,7 +199,7 @@ const products = [
         id: 16,
         name: "Asus TUF Z790-Plus",
         price: 250,
-        category: "mother",
+        category: "motherboard",
         discountStatus: {
             active: false,
             amount: 0,
@@ -212,7 +212,7 @@ const products = [
         id: 17,
         name: "ASRock Z790",
         price: 180,
-        category: "mother",
+        category: "motherboard",
         discountStatus: {
             active: false,
             amount: 0,
@@ -225,7 +225,7 @@ const products = [
         id: 18,
         name: "MSI B760M",
         price: 200,
-        category: "mother",
+        category: "motherboard",
         discountStatus: {
             active: false,
             amount: 0,
@@ -238,7 +238,7 @@ const products = [
         id: 19,
         name: "Corsair 4000D",
         price: 104,
-        category: "case",
+        category: "tower",
         discountStatus: {
             active: false,
             amount: 0,
@@ -251,7 +251,7 @@ const products = [
         id: 20,
         name: "LIAN LI 011 EVO",
         price: 170,
-        category: "case",
+        category: "tower",
         discountStatus: {
             active: false,
             amount: 0,
@@ -264,7 +264,7 @@ const products = [
         id: 21,
         name: "Fractal North ATX mATX",
         price: 140,
-        category: "case",
+        category: "tower",
         discountStatus: {
             active: false,
             amount: 0,
@@ -368,7 +368,7 @@ const products = [
         id: 29,
         name: "Segotep 650W 80Plus",
         price: 50,
-        category: "power",
+        category: "cooling",
         discountStatus: {
             active: false,
             amount: 0,
@@ -381,7 +381,7 @@ const products = [
         id: 30,
         name: "MSI A650GL 80 Plus Gold",
         price: 90,
-        category: "power",
+        category: "cooling",
         discountStatus: {
             active: false,
             amount: 0,
@@ -394,7 +394,7 @@ const products = [
         id: 31,
         name: "Corsair RM850x 80 Plus Gold",
         price: 154,
-        category: "power",
+        category: "cooling",
         discountStatus: {
             active: false,
             amount: 0,

@@ -1,9 +1,11 @@
+@import "./vars";
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color: #fbfbfb;
-    font-family: "DM Sans", sans-serif;
+    font-family: $interThight;
 }
 
 body {
