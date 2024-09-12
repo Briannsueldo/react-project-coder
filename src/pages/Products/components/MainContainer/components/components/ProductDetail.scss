@@ -1,0 +1,73 @@
+@import '../../../../../../styles/base/vars';
+
+.backButton-Container {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    .backButton {
+        background-color: #212121;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.mainItem-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 1000px;
+    height: 35rem;
+
+    .itemSectionLeft-container {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 100%;
+
+        .mainPicture-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            width: 100%;
+            height:80%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .carrouselPictures-container {
+            background-color: red;
+            width: 100%;
+            height: 20%;
+        }
+    }
+
+    .itemSectionRight-container {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 100%;
+
+        .mainInfo-container {
+            width: 100%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            padding: 0.25rem;
+        }
+
+        .belowSection-container {
+            background-color: blue;
+            width: 100%;
+            height: 20%;
+        }
+    }
+}
