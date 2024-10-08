@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import "./ItemsListContainer.scss";
-/* import products from "../../../../../../components/itemsData" */
 import { collection, getDocs, getFirestore } from 'firebase/firestore';
 import { useEffect, useState } from "react";
 
-export const ShowProducts = ({ category }) => {
+export const ShowProducts = ({ category, searchTerm }) => {
     const [filteredProducts, setFilteredProducts] = useState([]);
 
     useEffect(() => {
@@ -20,11 +19,23 @@ export const ShowProducts = ({ category }) => {
                     : products.filter((item) => item.category === category)
             );
 
-            setFilteredProducts(filtered);
+            /* const searchFiltered = filtered.filter(item =>
+                item.name.toLowerCase().includes(searchTerm.toLowerCase())
+            ); */
+
+            const searchFiltered = (
+                category === "all"
+                    ? filtered
+                    : filtered.filter((item) =>
+                        item.name.toLowerCase().includes(searchTerm.toLowerCase())
+                    )
+            )
+
+            setFilteredProducts(searchFiltered);
         }
 
         fetchData();
-    }, [category]);
+    }, [category, searchTerm]);
 
     return <>
         {filteredProducts.map((item) => (
@@ -44,7 +55,7 @@ export const ShowProducts = ({ category }) => {
                     </div>
                     <div className="itemButton">
                         <button className="cartButton">Add to cart</button>
-                        <Link to={`${item.id}`} className="moreButton">See more</Link>
+                        <Link to={`/products/${item.id}`} className="moreButton">See more</Link>
                     </div>
                 </div>
             </article>

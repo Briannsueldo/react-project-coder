@@ -5,11 +5,12 @@ import './CatDisplay.scss';
 import { ShowProducts } from './components/ItemsListContainer';
 
 
-export const CatDisplay = () => {
+export const CatDisplay = ({ searchTerm, onSearch }) => {
     const [selectedCategory, setSelectedCategory] = useState('all');
 
     const categoryClick = (category) => {
         setSelectedCategory(category);
+        onSearch("")
     };
 
     return <>
@@ -31,7 +32,7 @@ export const CatDisplay = () => {
                 })}
             </div>
             <div className="display-container">
-                <ShowProducts category={selectedCategory}/>
+                <ShowProducts category={selectedCategory} searchTerm={searchTerm}/>
             </div>
         </div>
     </>

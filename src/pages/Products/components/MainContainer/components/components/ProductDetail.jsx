@@ -1,23 +1,32 @@
+import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 import "./ProductDetail.scss"
 /* import products from "../../../../../../components/itemsData" */
 import { useState, useEffect } from "react"
 import { getFirestore, doc, getDoc } from "firebase/firestore"
 
-export const ProductDetail = ({ id }) => {
+export const ProductDetail = () => {
 
+    const { id } = useParams();
     const [item, setItem] = useState(null);
     
     useEffect(() => {
         const dataBase = getFirestore();
-        const docRef = doc(dataBase, "items", id)
+
+        const docRef = doc(dataBase, "items", id);
         getDoc(docRef)
         .then((snapshot) => {
-            setItem({ id: snapshot.id, ...snapshot.data() })
+            if (snapshot.exists()) {
+                setItem({ id: snapshot.id, ...snapshot.data() });
+            } else {
+                console.log(id);
+            }
         })
-    }, [])
+    }, [id]);
 
-    console.log(item);
+    if (!item) {
+        return <p>Obtaining data...</p>;
+    }
 
     return <>
         <div className="backButton-Container">
