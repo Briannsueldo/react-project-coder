@@ -5,7 +5,7 @@ import './CatDisplay.scss';
 import { ShowProducts } from './components/ItemsListContainer';
 
 
-export const CatDisplay = ({ searchInput }) => {
+export const CatDisplay = () => {
     const [selectedCategory, setSelectedCategory] = useState('all');
 
     const categoryClick = (category) => {
@@ -31,7 +31,7 @@ export const CatDisplay = ({ searchInput }) => {
                 })}
             </div>
             <div className="display-container">
-                <ShowProducts category={selectedCategory} searchInput={searchInput}/>
+                <ShowProducts category={selectedCategory}/>
             </div>
         </div>
     </>
