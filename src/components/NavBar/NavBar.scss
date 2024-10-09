@@ -25,5 +25,9 @@
         gap: 1rem;
         border: 1px solid $mainWhite;
         padding: .2rem .5rem;
+
+        .linkToCart {
+            background-color: transparent;
+        }
     }
 }

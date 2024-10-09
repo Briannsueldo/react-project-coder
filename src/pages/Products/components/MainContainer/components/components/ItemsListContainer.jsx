@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
 import "./ItemsListContainer.scss";
 import { collection, getDocs, getFirestore } from 'firebase/firestore';
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { cartContext } from "../../../../../../context/CartContext";
 
 export const ShowProducts = ({ category, searchTerm }) => {
     const [filteredProducts, setFilteredProducts] = useState([]);
+
+    const { cart, setCart } = useContext(cartContext);
+
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -19,10 +24,6 @@ export const ShowProducts = ({ category, searchTerm }) => {
                     : products.filter((item) => item.category === category)
             );
 
-            /* const searchFiltered = filtered.filter(item =>
-                item.name.toLowerCase().includes(searchTerm.toLowerCase())
-            ); */
-
             const searchFiltered = (
                 category === "all"
                     ? filtered
@@ -36,6 +37,27 @@ export const ShowProducts = ({ category, searchTerm }) => {
 
         fetchData();
     }, [category, searchTerm]);
+
+    const handleCart = (item) => {
+        setCart((prevCart) => {
+            
+            const checkCart = prevCart.find((cartItem) => cartItem.id === item.id);
+
+            if (checkCart) {
+                return prevCart.map((cartItem) => 
+                    cartItem.id === item.id
+                        ? { ...cartItem, amount: cartItem.amount + 1 }
+                        : cartItem
+                );
+            } else {
+                return [...prevCart, { ...item, amount: 1 }];
+            }
+        });
+    };
+
+    useEffect(() => {
+        console.log(cart)
+    }, [cart])
 
     return <>
         {filteredProducts.map((item) => (
@@ -54,7 +76,7 @@ export const ShowProducts = ({ category, searchTerm }) => {
                         </div>
                     </div>
                     <div className="itemButton">
-                        <button className="cartButton">Add to cart</button>
+                        <button className="cartButton" onClick={ () => handleCart(item) }>Add to cart</button>
                         <Link to={`/products/${item.id}`} className="moreButton">See more</Link>
                     </div>
                 </div>

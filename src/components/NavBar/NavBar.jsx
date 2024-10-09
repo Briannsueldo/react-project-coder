@@ -1,7 +1,7 @@
 import { Logo } from "./components/Logo"
 import { Cart } from "./components/Cartwidget";
 import { PageSections } from "./components/PageSections";
-
+import { Link } from "react-router-dom";
 
 import './NavBar.scss';
 
@@ -15,7 +15,9 @@ export const NavBar = () => {
                 <PageSections/>
             </div>
             <button className="cartNav-container">
-                <Cart/>
+                <Link className="linkToCart" to={`/Cart`}>
+                    <Cart/>
+                </Link>
             </button>
         </nav>
     </>

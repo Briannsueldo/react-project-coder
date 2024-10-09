@@ -1,0 +1,33 @@
+
+.info-container {
+    width: 30rem;
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.cartItem-container {
+    width: 30rem;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+    .cartItem-img {
+        display: flex;
+        height: 5rem;
+    }
+}
+
+.finalPrice {
+    width: 30rem;
+    height: 5rem;
+    display: flex;
+    justify-content: end;
+}
+
+.clearButton {
+    width: 2.5rem;
+    width: 6rem;
+}

@@ -1,14 +1,15 @@
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 import "./ProductDetail.scss"
-/* import products from "../../../../../../components/itemsData" */
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { getFirestore, doc, getDoc } from "firebase/firestore"
+import { cartContext } from "../../../../../../context/CartContext"
 
 export const ProductDetail = () => {
 
     const { id } = useParams();
     const [item, setItem] = useState(null);
+    const { cart, setCart } = useContext(cartContext);
     
     useEffect(() => {
         const dataBase = getFirestore();
@@ -27,6 +28,23 @@ export const ProductDetail = () => {
     if (!item) {
         return <p>Obtaining data...</p>;
     }
+
+    const handleCart = (item) => {
+        setCart((prevCart) => {
+            
+            const checkCart = prevCart.find((cartItem) => cartItem.id === item.id);
+
+            if (checkCart) {
+                return prevCart.map((cartItem) => 
+                    cartItem.id === item.id
+                        ? { ...cartItem, amount: cartItem.amount + 1 }
+                        : cartItem
+                );
+            } else {
+                return [...prevCart, { ...item, amount: 1 }];
+            }
+        });
+    };
 
     return <>
         <div className="backButton-Container">
@@ -61,7 +79,7 @@ export const ProductDetail = () => {
                     </div>
                     <div className="payments-container">
                         <button className="buyButton">Buy now</button>
-                        <button className="cartButton">Add to cart</button>
+                        <button className="cartButton" onClick={ () => handleCart(item) }>Add to cart</button>
                     </div>
                 </div>
                 <div className="belowSection-container">
